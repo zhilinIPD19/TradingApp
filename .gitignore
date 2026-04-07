@@ -1,0 +1,33 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+packages/
+*.nupkg
+
+# Cache
+*.cache
+*.tmp
+
+# App settings (optional)
+appsettings.Development.json
+
+# Secrets / certs
+*.pfx
+*.key

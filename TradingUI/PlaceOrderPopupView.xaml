@@ -1,0 +1,47 @@
+﻿<Window x:Class="TradingUI.PlaceOrderPopupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TradingUI"
+        mc:Ignorable="d"
+        Title="Place Order Dialog" Height="400" Width="425" Background="DarkGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding AccountInfo}" Margin="10" VerticalAlignment="Center" FontSize="16"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Symbol:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Equities}" SelectedItem="{Binding SelectedEquity}" DisplayMemberPath="Symbol" Margin="10" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding EquityMessage}" Margin="10" VerticalAlignment="Center" Foreground="Red"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Order Type:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding OrderTypes}" SelectedItem="{Binding SelectedOrderType}" Margin="10" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Quantity:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding QuantityInput}" Margin="10" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding QuantityValidateMessage}" Margin="10" VerticalAlignment="Center" Foreground="Red"/>
+
+        <!--LimitPrice-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Limit Price:" Margin="10" VerticalAlignment="Center"  HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding LimitPriceInput}" Margin="10" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding LimitPriceValidateMessage}" Margin="10" VerticalAlignment="Center" Foreground="Red"/>
+        
+        <Button Grid.Row="5" Grid.Column="0" Content="Cancel" Command="{Binding CancelCommand}" Margin="18" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="Place Order" Command="{Binding PlaceOrderCommand}" Margin="18" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="{Binding ErrorMessage}" Margin="10" VerticalAlignment="Center" Foreground="Red"/>
+    </Grid>
+</Window>

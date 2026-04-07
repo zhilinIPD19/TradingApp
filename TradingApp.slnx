@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="REDEME.md" />
+  </Folder>
+  <Project Path="TradingApi/TradingApi.csproj" />
+  <Project Path="TradingLibrary/TradingLibrary.csproj" Id="90ba84c9-d045-4cb9-90ce-e53bfcfd5214" />
+  <Project Path="TradingUI/TradingUI.csproj" Id="96c150ad-286c-4ec1-a038-124757a2cf47" />
+</Solution>
